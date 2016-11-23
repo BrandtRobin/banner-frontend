@@ -10,22 +10,11 @@ import { BannerService } from '../banner.service';
   styleUrls: ['./banner-form.component.css']
 })
 export class BannerFormComponent implements OnInit {
-  private title: string;
   private banner: Banner = new Banner();
   constructor(private bannerService: BannerService,
               private router: Router) { }
 
   ngOnInit() {
-    this.setString();
-    this.setBanner();
-  }
-
-  setString() {
-    console.log('hejsan');
-  }
-
-  setBanner() {
-    this.banner.Html = 'hej';
   }
 
   createBanner(banner: Banner) {

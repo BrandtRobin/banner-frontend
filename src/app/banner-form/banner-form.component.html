@@ -1,10 +1,8 @@
-<p>
-  banner-form works!
-  {{title}}
-  {{banner | json}}
-</p>
-<form #form="ngForm" (submit)="createBanner(banner)" class="form-group">
-  <label for="banner">Create new banner with valid html</label>
-  <textarea type="text" class="form-control" rows="10" name="Html" [(ngModel)]=banner.Html></textarea>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<div class="container">
+  <form #form="ngForm" (submit)="createBanner(banner)" class="form-group">
+    <label for="banner">Create new banner with valid html</label>
+    <textarea type="text" class="form-control" rows="10" name="Html" [(ngModel)]=banner.Html></textarea>
+  <br/>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

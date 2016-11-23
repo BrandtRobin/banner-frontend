@@ -38,12 +38,9 @@ export class BannerService {
             .map(() => {});
   }
 
-  showBannerHtml(id: string): Observable<string> {
+  getBannerHtml(id: string): Observable<string> {
     return this.http.get(`${this.bannerUrl}/${id}/html`)
     .map(response => response.text());
   }
 
-  getString(): string {
-    return 'hello';
-  }
 }

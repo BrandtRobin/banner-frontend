@@ -8,13 +8,15 @@ import { BannerListComponent } from './banner-list/banner-list.component';
 import { BannerService } from './banner.service';
 import { BannerFormComponent } from './banner-form/banner-form.component';
 import { BannerDetailComponent } from './banner-detail/banner-detail.component';
+import { BannerHtmlComponent } from './banner-html/banner-html.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerListComponent,
     BannerFormComponent,
-    BannerDetailComponent
+    BannerDetailComponent,
+    BannerHtmlComponent
   ],
   imports: [
     BrowserModule,
