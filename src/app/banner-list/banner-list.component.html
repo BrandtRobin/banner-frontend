@@ -1,0 +1,22 @@
+<!-- <my-hero-detail [hero]="selectedHero"></my-hero-detail> -->
+<h2>Banner list</h2>
+<p>
+  <button class="btn btn-primary" (click)="goToNewBannerForm()">Create banner</button>
+</p>
+<div class="list-group" *ngFor="let banner of banners"
+  (click)="onSelect(banner)">
+  <a class="list-group-item">
+    <h5 class="list-group-item-heading">ID: {{ banner.Id }}
+      <span class="pull-right" (click)="editBanner(banner.Id); $event.stopPropagation()">
+        <button class="btn btn-success btn-xs">Edit</button>
+      </span>
+    </h5>
+    <p class="list-group-item-text">Created: {{ banner.Created }}</p>
+    <p class="list-group-item-text">Modified: {{ banner.Html }}
+    <span class="pull-right">
+      <button class="btn btn-danger btn-xs">Delete</button>
+    </span>
+    </p>
+
+  </a>
+</div>
