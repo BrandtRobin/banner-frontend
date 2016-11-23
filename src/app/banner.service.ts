@@ -33,6 +33,16 @@ export class BannerService {
                 .map(response => response.json() as Banner);
   }
 
+  deleteBanner(id: string): Observable<any> {
+    return this.http.delete(`${this.bannerUrl}/${id}`)
+            .map(() => {});
+  }
+
+  showBannerHtml(id: string): Observable<string> {
+    return this.http.get(`${this.bannerUrl}/${id}/html`)
+    .map(response => response.text());
+  }
+
   getString(): string {
     return 'hello';
   }

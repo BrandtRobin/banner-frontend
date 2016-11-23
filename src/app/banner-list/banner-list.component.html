@@ -14,7 +14,8 @@
     <p class="list-group-item-text">Created: {{ banner.Created }}</p>
     <p class="list-group-item-text">Modified: {{ banner.Html }}
     <span class="pull-right">
-      <button class="btn btn-danger btn-xs">Delete</button>
+      <button class="btn btn-danger btn-xs"
+      (click)="deleteBanner(banner.Id); $event.stopPropagation()">Delete</button>
     </span>
     </p>
 

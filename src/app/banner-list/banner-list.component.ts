@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Banner } from '../banner';
 import { BannerService } from '../banner.service';
 
@@ -14,7 +14,8 @@ export class BannerListComponent implements OnInit {
   selectedbanner: Banner;
   private banner: Banner = new Banner();
   constructor(private bannerService: BannerService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.banner.Html = '<h1>yo</h1>';
@@ -35,12 +36,23 @@ export class BannerListComponent implements OnInit {
     return this.selectedbanner;
   }
 
-  goToNewBannerForm() {
-    this.router.navigate(['/banners/new']);
-  }
 
   editBanner(bannerId: string) {
     this.router.navigate(['/banners/', bannerId]);
   }
 
+  deleteBanner(id: string) {
+    this.bannerService.deleteBanner(id)
+    .subscribe(() => this.removeFromList(id));
+  }
+
+  removeFromList(id: string) {
+    this.banners = this.banners.filter(function(banner) {
+      return banner.Id !== id;
+    });
+  }
+
+  goToNewBannerForm() {
+    this.router.navigate(['/banners/new']);
+  }
 }
